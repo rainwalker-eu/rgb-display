@@ -1,0 +1,25 @@
+# Deterministic line endings across machines.
+#
+# The repo had core.autocrlf=true and no attributes, so EOL handling was
+# machine-dependent and every CubeMX/ST regeneration showed the vendored
+# Drivers/ and Middlewares/ trees as huge LF<->CRLF "changes". CubeMX and ST
+# emit LF, so we pin text to LF in both the repo and the working tree — the
+# churn disappears for good.
+* text=auto eol=lf
+
+# Binary assets: never apply EOL conversion or attempt a textual diff.
+*.glb   binary
+*.step  binary
+*.stp   binary
+*.zip   binary
+*.pdf   binary
+*.elf   binary
+*.bin   binary
+*.hex   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.ico   binary
+*.ttf   binary
+*.woff  binary
+*.woff2 binary

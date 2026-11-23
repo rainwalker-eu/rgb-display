@@ -1,0 +1,47 @@
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-backups
+*.kicad_prl
+*.sch-bak
+\~*
+\#*
+_autosave-*
+*.tmp
+*-save.pro
+*-save.kicad_pcb
+fp-info-cache
+
+# Netlist files (exported from Eeschema)
+*.net
+
+# Autorouter files (exported from Pcbnew)
+*.dsn
+*.ses
+
+.vs
+build
+.visualgdb
+bin
+obj
+# Per-developer IDE and project state
+*.user
+
+# Parts of the vendored CMSIS tree that CubeMX copies in but this project never
+# uses: the build needs only Drivers/CMSIS/Include and Drivers/CMSIS/Device/.
+# Together these are ~48 MB, mostly prebuilt IAR/ARMCC .a blobs and examples.
+# Restore from the CMSIS pack or CubeMX if DSP/NN/RTOS is ever needed.
+fw/rgb3210/Drivers/CMSIS/DSP/
+fw/rgb3210/Drivers/CMSIS/NN/
+fw/rgb3210/Drivers/CMSIS/RTOS/
+fw/rgb3210/Drivers/CMSIS/RTOS2/
+fw/rgb3210/Drivers/CMSIS/docs/
+
+# Board design sources are not published in this repository.
+schematic/
+*.kicad_sch
+*.kicad_pcb
+*.kicad_pro

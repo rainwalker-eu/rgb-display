@@ -1,0 +1,63 @@
+Copyright (c) 2026 Rainwalker OÜ. All rights reserved except as stated below.
+
+This repository is not covered by a single licence. Different parts are licensed
+differently, as set out below.
+
+--------------------------------------------------------------------------------
+1. SOFTWARE — Apache License 2.0
+--------------------------------------------------------------------------------
+
+Applies to the software authored by Rainwalker OÜ:
+
+  app/**
+  fw/rgb3210/Core/**
+  fw/rgb3210/USB_Device/**
+  fw/rgb3210/cmake/**
+  fw/rgb3210/CMakeLists.txt, CMakePresets.json
+  fw/rgb3210/*.ld, fw/rgb3210/*.ioc, fw/rgb3210/startup_stm32g431xx.s
+  fw/RGB3210.sln, fw/rgb3210/RGB3210.vgdbcmake and other project files
+  README.md
+
+Full licence text: LICENSES/Apache-2.0.txt
+SPDX-License-Identifier: Apache-2.0
+
+Note: many files under fw/rgb3210/ are produced by STM32CubeMX and carry
+STMicroelectronics copyright headers. The Apache-2.0 grant above covers the code
+authored by Rainwalker OÜ (in particular the USER CODE sections); the generated
+scaffolding remains subject to STMicroelectronics' terms — see section 3.
+
+--------------------------------------------------------------------------------
+2. HARDWARE DOCUMENTATION — all rights reserved
+--------------------------------------------------------------------------------
+
+Applies to:
+
+  docs/rgb3210v1-schematic.pdf
+
+The board design (schematic, layout and fabrication data) is the property of
+Rainwalker OÜ. The schematic PDF is published for reference and review only; no
+licence to manufacture, modify or redistribute the design is granted. The design
+source files are not part of this repository. For licensing enquiries, contact
+Rainwalker OÜ.
+
+--------------------------------------------------------------------------------
+3. THIRD-PARTY COMPONENTS
+--------------------------------------------------------------------------------
+
+Vendored, unmodified components generated or supplied by their vendors. Each
+keeps its own terms; see the LICENSE.txt files in the respective directories.
+
+  fw/rgb3210/Drivers/CMSIS/
+      Apache-2.0, Arm Limited
+
+  fw/rgb3210/Drivers/STM32G4xx_HAL_Driver/
+      BSD-3-Clause, STMicroelectronics
+
+  fw/rgb3210/Middlewares/ST/STM32_USB_Device_Library/
+      ST Ultimate Liberty licence SLA0044, STMicroelectronics.
+      Use is restricted to STMicroelectronics microcontrollers.
+
+  app/ NuGet dependencies (System.IO.Ports and the .NET runtime)
+      MIT, .NET Foundation and contributors
+
+Nothing in sections 1–2 grants any right in these third-party components.
