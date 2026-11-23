@@ -1,0 +1,10 @@
+# What to show on one rgb3210 display: copy to ~/.config/rgb3210/<serial>.conf
+# The serial is the file name in /dev/rgb3210/ (also the tail of /dev/serial/by-id/usb-STMicroelectronics_RW.RGB3210...).
+# Without this file the display shows CpuGraph with default settings.
+# Apply changes with: systemctl --user restart rgb3210@<serial>
+
+# CpuGraph, MemGraph or BtcGraph
+APP=CpuGraph
+# Switches (--flip, --left) and optional INTERVAL_SEC BRIGHTNESS_PERCENT; the port is added by the service.
+# For BtcGraph the second value is the candle interval instead, e.g. ARGS="--flip 1h 10"
+ARGS="--flip 1 10"

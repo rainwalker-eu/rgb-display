@@ -1,0 +1,17 @@
+# User service for one rgb3210 display, instance name is the display serial (see 70-rgb3210.rules).
+# Started by udev on plug-in, stopped by BindsTo when the display is unplugged.
+[Unit]
+Description=rgb3210 display %i
+BindsTo=dev-rgb3210-%i.device
+After=dev-rgb3210-%i.device
+
+[Service]
+Environment=APP=CpuGraph ARGS=
+# APP=CpuGraph|MemGraph|BtcGraph, ARGS=switches and interval/brightness; see rgb3210.conf.example
+EnvironmentFile=-%h/.config/rgb3210/%i.conf
+# The port goes first: it is the first positional argument of the apps
+ExecStart=/bin/sh -c 'exec "%h/.local/lib/rgb3210/RW.LedDisplay.$APP" "/dev/rgb3210/%i" $ARGS'
+# The apps stop their display program and clear the panel on Ctrl+C
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5

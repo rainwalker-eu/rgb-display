@@ -1,0 +1,7 @@
+# rgb3210 display: write access for the local user and one rgb3210@<serial> user service per display.
+# 0483:5740 is ST's generic virtual COM port ID shared by many boards, so the product string is matched too.
+# The serial comes from the MCU unique ID: stable per board, unlike ttyACMn.
+# Must sort before 73-seat-late.rules, which turns the uaccess tag into ACLs.
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", ATTRS{product}=="RW.RGB3210.*", \
+  SYMLINK+="rgb3210/$attr{serial}", TAG+="uaccess", \
+  TAG+="systemd", ENV{SYSTEMD_USER_WANTS}+="rgb3210@$attr{serial}.service"
